@@ -1,0 +1,15 @@
+I made this project in HTML, CSS, JS, PHP, Mysql.
+
+so you need to configure xampp.
+
+
+create a database with name appointment_system
+
+then select this database and click on import then import the file that is give in my project directory name appointment_system.sql
+
+
+then create a folder in the C drive where xammp is installed -- xampp -> htdocs -> create a folder
+
+then copy and paste all the files like html php and css of my project in that folder
+
+then start apache and mysql in xampp and open chrome browser and search localhost/foldername
