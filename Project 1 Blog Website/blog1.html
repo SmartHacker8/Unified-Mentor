@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post 1: What is Web Development?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Post 1: What is Web Development?</h1>
+    </header>
+    <main>
+        <div class="blog-post">
+            <img src="1.jpg" alt="Blog 1 Image">
+            <div class="blog-info">
+                <h2>Blog Post 1: What is Web Development?</h2>
+                <p>Web development encompasses the art and science of creating websites and web applications that operate on the internet. It involves a multidisciplinary approach, blending technical skills with creativity to build interactive and engaging digital experiences. At its core, web development revolves around three primary components: front-end development, back-end development, and full-stack development, which combines both front-end and back-end skills.
+
+                    <br><br>Front-end development focuses on the client-side aspects of a website, dealing with the user interface and user experience. It involves languages like HTML, CSS, and JavaScript to create visually appealing and responsive designs that users interact with directly in their browsers.
+                    
+                    <br><br>Back-end development, on the other hand, handles the server-side logic and database management necessary for web applications to function. This includes server-side scripting languages like PHP, Python, Ruby, and frameworks such as Node.js, Django, and Ruby on Rails.
+                    
+                    <br><br>Full-stack development integrates both front-end and back-end development skills, enabling developers to work on all aspects of a web project, from designing the user interface to managing databases and server-side logic. As technology evolves, web development continues to expand its horizons, encompassing new tools, frameworks, and methodologies to meet the demands of modern digital experiences on the web.</p>
+                <hr>
+                <h3>Comments</h3>
+                <div id="comments">
+                    <!-- Comments will be dynamically added here -->
+                </div>
+                <form id="comment-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Function to handle form submission and display comments
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('comment-form');
+            const commentList = document.getElementById('comments');
+
+            commentForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const comment = document.getElementById('comment').value;
+
+                // Create new comment element
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `
+                    <strong>${name}</strong>: ${comment}
+                `;
+
+                // Append the new comment to the comment list
+                commentList.appendChild(newComment);
+
+                // Reset form fields
+                commentForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

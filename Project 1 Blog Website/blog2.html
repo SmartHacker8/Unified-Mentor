@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post 1: What is Full Stack Web Development?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Post 1: What is Full Stack Web Development?</h1>
+    </header>
+    <main>
+        <div class="blog-post">
+            <img src="1.jpg" alt="Blog 1 Image">
+            <div class="blog-info">
+                <h2>Blog Post 1: What is Full Stack Web Development?</h2>
+                <p>Full Stack Web Development refers to the comprehensive skill set required to manage both the front-end (client-side) and back-end (server-side) parts of web applications. A full stack developer possesses proficiency in multiple programming languages, frameworks, databases, and server technologies necessary to handle all stages of software development.
+
+                    <br><br>On the front-end side, full stack developers are adept at using languages like HTML, CSS, and JavaScript along with frameworks such as React, Angular, or Vue.js. They focus on creating the user interface (UI) and ensuring a seamless user experience (UX) across different devices and browsers.
+                    
+                    <br><br>Conversely, on the back-end, full stack developers manage server-side languages like JavaScript (Node.js), Python (Django, Flask), Ruby (Ruby on Rails), or PHP (Laravel). They are responsible for server management, database integration (SQL or NoSQL databases like MySQL, MongoDB), and handling server-side logic that powers the application's functionality.
+                    
+                    <br><br>Beyond technical skills, full stack developers are proficient in version control systems (e.g., Git), deployment processes, and understanding of security principles. Their ability to work on both ends of the technology stack enables them to build and maintain entire web applications independently or as part of a team, ensuring efficient communication between front-end and back-end components for robust, scalable, and responsive web solutions.</p>
+                <hr>
+                <h3>Comments</h3>
+                <div id="comments">
+                    <!-- Comments will be dynamically added here -->
+                </div>
+                <form id="comment-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Function to handle form submission and display comments
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('comment-form');
+            const commentList = document.getElementById('comments');
+
+            commentForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const comment = document.getElementById('comment').value;
+
+                // Create new comment element
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `
+                    <strong>${name}</strong>: ${comment}
+                `;
+
+                // Append the new comment to the comment list
+                commentList.appendChild(newComment);
+
+                // Reset form fields
+                commentForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

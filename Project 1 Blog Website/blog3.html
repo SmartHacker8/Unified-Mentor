@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post 1: What is MERN Stack?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Post 1: What is MERN Stack?</h1>
+    </header>
+    <main>
+        <div class="blog-post">
+            <img src="1.jpg" alt="Blog 1 Image">
+            <div class="blog-info">
+                <h2>Blog Post 1: What is MERN Stack?</h2>
+                <p>The MERN stack is a popular set of technologies used for building full stack web applications. It consists of four key components: MongoDB, Express.js, React, and Node.js. Each component plays a crucial role in the development process:
+
+                    <br><br>MongoDB: MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It is known for its scalability, flexibility, and ease of use, making it suitable for handling large volumes of data and complex queries. MongoDB is integral to the MERN stack as the database layer for storing and retrieving application data.
+                    
+                    <br><br>Express.js: Express.js is a minimalist and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications. It simplifies the process of handling HTTP requests, routing, middleware integration, and templating, allowing developers to build scalable APIs and web servers efficiently.
+                    
+                    <br><br>React: React is a JavaScript library developed by Facebook for building user interfaces. It allows developers to create reusable UI components that manage their own state, making it easier to build complex UIs. React's component-based architecture and virtual DOM enable efficient rendering and updating of UI elements, providing a seamless user experience.
+                    
+                    <br><br>Node.js: Node.js is a server-side JavaScript runtime built on Chrome's V8 JavaScript engine. It enables developers to run JavaScript code outside of a web browser, making it ideal for building scalable network applications. Node.js powers the server-side logic of MERN stack applications, handling requests from the client-side, interacting with databases like MongoDB, and integrating with front-end frameworks like React.
+                    
+                    <br><br>Together, MongoDB, Express.js, React, and Node.js form the MERN stack, offering a powerful and efficient environment for developing modern web applications. This stack is favored for its flexibility, performance, and ability to build full stack applications entirely using JavaScript, simplifying development and ensuring consistency across the entire application stack.</p>
+                <hr>
+                <h3>Comments</h3>
+                <div id="comments">
+                    <!-- Comments will be dynamically added here -->
+                </div>
+                <form id="comment-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Function to handle form submission and display comments
+        document.addEventListener('DOMContentLoaded', function() {
+            const commentForm = document.getElementById('comment-form');
+            const commentList = document.getElementById('comments');
+
+            commentForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const comment = document.getElementById('comment').value;
+
+                // Create new comment element
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.innerHTML = `
+                    <strong>${name}</strong>: ${comment}
+                `;
+
+                // Append the new comment to the comment list
+                commentList.appendChild(newComment);
+
+                // Reset form fields
+                commentForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
